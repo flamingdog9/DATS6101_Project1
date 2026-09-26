@@ -3,7 +3,7 @@ The template:
 
 > *Over [time window], is the relationship between [column X] and [column Y] across metros different in the bottom 100 metros than in the top 100?*
 
-**Three ways to test it** (pick one per question):
+## Three ways to test it** (pick one per question)
 
 - **Compare correlations (Fisher's z-test).** Compute the correlation between X and Y separately for each group, then test whether the two correlations differ. Show one scatterplot with the two groups in different colors and a fitted line for each.
 - **Two-way ANOVA with an interaction.** Split X into high and low at its median, then run `aov(Y ~ X_level * group)`. The interaction p-value answers "does X play a different role in small metros?"
