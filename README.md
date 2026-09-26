@@ -103,3 +103,41 @@ All four use your **Jun 2023–Aug 2026** window.
 - Q3 → chi-square
 - Q4 → t-test
 
+**Question key:** Q1 = days on market vs. price variation, Q2 = price differences by region, Q3 = price increases/reductions by metro size, Q4 = seasonal changes in listings.
+
+#### **Existing columns definitions:**
+
+* **month_date_yyyymm**: The year and month of the observation, written as YYYYMM (e.g., 202308 = Aug 2023). Used to limit the data to Jun 2023–Aug 2026. (Q1, Q2, Q3, Q4)
+* **cbsa_code**: Unique ID number for each metro area (Core-Based Statistical Area). Used to group rows by metro. (Q1, Q2, Q3, Q4)
+* **cbsa_title**: Name of the metro area plus its state abbreviation(s), e.g., "Austin-Round Rock, TX". (Q2, plus labels for all)
+* **quality_flag**: Marks months where Realtor.com notes the metro's data may be unreliable. Used to remove those rows. (Q1, Q2, Q3, Q4)
+* **HouseholdRank**: The metro's rank by number of households, where 1 = most households. Measures metro size, not density. (Q3)
+* **median_days_on_market**: Median number of days listings in the metro spent on the market that month. (Q1)
+* **median_listing_price_mm**: Month-over-month change in the metro's median listing price. Check whether it's stored as a decimal or a percent. (Q1)
+* **median_listing_price**: Median asking price of homes listed for sale in the metro that month. (Q2)
+* **median_listing_price_per_square_foot**: Median asking price per square foot. Adjusts for differences in home size. (Q2, optional)
+* **price_reduced_share**: Share of the metro's active listings that had their price lowered that month. (Q3)
+* **price_increased_share**: Share of the metro's active listings that had their price raised that month. (Q3)
+* **active_listing_count**: Number of homes for sale in the metro that month, not counting homes under contract (pending). (Q4)
+* **new_listing_count**: Number of homes newly listed for sale in the metro that month. (Q4)
+
+**Featured columns definitions:**
+
+* **avg_dom**: Each metro's average `median_days_on_market` from Jun 2023 to Aug 2026. (Q1)
+* **price_volatility**: Standard deviation of each metro's monthly price changes (`median_listing_price_mm`) over the window. A higher value means prices swing more from month to month. (Q1)
+* **dom_tier**: Short, Medium or Long, made by splitting metros into three equal groups based on `avg_dom`. (Q1)
+* **region**: Census region (Northeast, Midwest, South or West), taken from the first state abbreviation in `cbsa_title`. (Q2)
+* **avg_price**: Each metro's average `median_listing_price` from Jun 2023 to Aug 2026. (Q2)
+* **log_avg_price**: Natural log of `avg_price`, used to reduce right skew before the ANOVA. (Q2)
+* **pct_diff_national**: How far a metro's `avg_price` is above or below the national average, as a percent: (metro average − national average) ÷ national average × 100. (Q2)
+* **avg_price_sqft**: Each metro's average `median_listing_price_per_square_foot` over the window. (Q2, optional)
+* **size_group**: Metro size group based on `HouseholdRank`, either quartiles or Top 100 / Bottom 100. (Q3)
+* **avg_reduced_share**: Each metro's average `price_reduced_share` over the window. (Q3)
+* **avg_increased_share**: Each metro's average `price_increased_share` over the window. (Q3)
+* **high_cut**: Yes/No, whether the metro's `avg_reduced_share` is above the median of all metros. Used for the chi-square test. (Q3)
+* **month_num**: Calendar month (1–12), taken from `month_date_yyyymm`. (Q4)
+* **season**: Winter (Dec–Feb), Spring (Mar–May), Summer (Jun–Aug) or Fall (Sep–Nov), based on `month_num`. (Q4)
+* **school_start**: Yes/No, whether the month is August or September. (Q4, optional)
+* **market_year**: 12-month period running June to May: MY1 = Jun 2023–May 2024, MY2 = Jun 2024–May 2025, MY3 = Jun 2025–May 2026. Leave Jun–Aug 2026 out of Q4, because a summer-only partial year would skew the index. (Q4)
+* **indexed_listings**: A metro's `active_listing_count` for the month divided by its average for that `market_year`. For example, 1.10 means 10% above that metro's usual level. This lets big and small metros be compared fairly. Make the same column for `new_listing_count` if you use it. (Q4)
+
