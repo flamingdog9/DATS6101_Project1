@@ -122,8 +122,9 @@ All four use your **Jun 2023–Aug 2026** window.
 * **new_listing_count**: Number of homes newly listed for sale in the metro that month. (Q4)
 
 **Featured columns definitions:** (We will change the Featured Columns definitions to our own defintons later. The existing columns are Realtor's definitions)
+---
 
-*`Q1 Featured Columns used:*
+*Q1 Featured Columns used:*
 * **avg_days_on_market**: Each metro's average `median_days_on_market` from Jun 2023 to Aug 2026. (Q1)
 * **price_volatility**: Standard deviation of each metro's monthly price changes (`median_listing_price_mm`) over the window. A higher value means prices swing more from month to month. (Q1)
 * **days_on_market_tier**: Short, Medium or Long, made by splitting metros into three equal groups based on `avg_dom`. (Q1)
