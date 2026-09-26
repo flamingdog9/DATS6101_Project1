@@ -121,20 +121,27 @@ All four use your **Jun 2023–Aug 2026** window.
 * **active_listing_count**: Number of homes for sale in the metro that month, not counting homes under contract (pending). (Q4)
 * **new_listing_count**: Number of homes newly listed for sale in the metro that month. (Q4)
 
-**Featured columns definitions:**
+**Featured columns definitions:** (We will change the Featured Columns definitions to our own defintons later. The existing columns are Realtor's definitions)
 
-* **avg_dom**: Each metro's average `median_days_on_market` from Jun 2023 to Aug 2026. (Q1)
+*`Q1 Featured Columns used:*
+* **avg_days_on_market**: Each metro's average `median_days_on_market` from Jun 2023 to Aug 2026. (Q1)
 * **price_volatility**: Standard deviation of each metro's monthly price changes (`median_listing_price_mm`) over the window. A higher value means prices swing more from month to month. (Q1)
-* **dom_tier**: Short, Medium or Long, made by splitting metros into three equal groups based on `avg_dom`. (Q1)
+* **days_on_market_tier**: Short, Medium or Long, made by splitting metros into three equal groups based on `avg_dom`. (Q1)
+
+*Q2 Featured Columns used:*
 * **region**: Census region (Northeast, Midwest, South or West), taken from the first state abbreviation in `cbsa_title`. (Q2)
 * **avg_price**: Each metro's average `median_listing_price` from Jun 2023 to Aug 2026. (Q2)
 * **log_avg_price**: Natural log of `avg_price`, used to reduce right skew before the ANOVA. (Q2)
 * **pct_diff_national**: How far a metro's `avg_price` is above or below the national average, as a percent: (metro average − national average) ÷ national average × 100. (Q2)
 * **avg_price_sqft**: Each metro's average `median_listing_price_per_square_foot` over the window. (Q2, optional)
+
+*Q3 Featured Columns used:*
 * **size_group**: Metro size group based on `HouseholdRank`, either quartiles or Top 100 / Bottom 100. (Q3)
 * **avg_reduced_share**: Each metro's average `price_reduced_share` over the window. (Q3)
 * **avg_increased_share**: Each metro's average `price_increased_share` over the window. (Q3)
 * **high_cut**: Yes/No, whether the metro's `avg_reduced_share` is above the median of all metros. Used for the chi-square test. (Q3)
+
+*Q4 Featured Columns used:*
 * **month_num**: Calendar month (1–12), taken from `month_date_yyyymm`. (Q4)
 * **season**: Winter (Dec–Feb), Spring (Mar–May), Summer (Jun–Aug) or Fall (Sep–Nov), based on `month_num`. (Q4)
 * **school_start**: Yes/No, whether the month is August or September. (Q4, optional)
