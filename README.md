@@ -105,7 +105,7 @@ All four use your **Jun 2023–Aug 2026** window.
 
 **Question key:** Q1 = days on market vs. price variation, Q2 = price differences by region, Q3 = price increases/reductions by metro size, Q4 = seasonal changes in listings.
 
-#### **Existing columns definitions:**
+### **Existing columns definitions:**
 
 * **month_date_yyyymm**: The year and month of the observation, written as YYYYMM (e.g., 202308 = Aug 2023). Used to limit the data to Jun 2023–Aug 2026. (Q1, Q2, Q3, Q4)
 * **cbsa_code**: Unique ID number for each metro area (Core-Based Statistical Area). Used to group rows by metro. (Q1, Q2, Q3, Q4)
