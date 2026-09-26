@@ -47,8 +47,7 @@ All four use your **Jun 2023–Aug 2026** window.
   - % difference from the national average
   - log price, because prices are right-skewed
 - **Tests:**
-  - ANOVA + Tukey on log price (or Kruskal-Wallis if normality fails)
-  - standard deviation and coefficient of variation for each region
+  - ANOVA + Tukey on log price (or Kruskal-Wallis if normality fails) standard deviation and coefficient of variation for each region
   - Levene's test to check whether some regions vary more than others
 - **Graphs:**  
   - box plots by region;
@@ -103,8 +102,7 @@ All four use your **Jun 2023–Aug 2026** window.
 - Q2 → ANOVA and measures of variance
 - Q3 → chi-square
 - Q4 → t-test
-
-
+---
 ## Column Defintions
 (We will change Claude's definitions to our own which are the featured columns. Existing columns are Realtor's definition.)
 
