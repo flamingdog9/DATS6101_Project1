@@ -104,7 +104,7 @@ All four use your **Jun 2023–Aug 2026** window.
 - Q4 → t-test
 
 
-### Column Defintions
+## Column Defintions
 (We will change Claude's definitions to our own which are the featured columns. Existing columns are Realtor's definition.)
 
 **Question key:** 
