@@ -103,9 +103,17 @@ All four use your **Jun 2023–Aug 2026** window.
 - Q3 → chi-square
 - Q4 → t-test
 
-**Question key:** Q1 = days on market vs. price variation, Q2 = price differences by region, Q3 = price increases/reductions by metro size, Q4 = seasonal changes in listings.
 
-### **Existing columns definitions:**
+### Column Defintions
+(We will change Claude's definitions to our own which are the featured columns. Existing columns are Realtor's definition.)
+
+**Question key:** 
+* Q1 = days on market vs. price variation,
+* Q2 = price differences by region,
+* Q3 = price increases/reductions by metro size,
+* Q4 = seasonal changes in listings.
+
+**Existing columns definitions:**
 
 * **month_date_yyyymm**: The year and month of the observation, written as YYYYMM (e.g., 202308 = Aug 2023). Used to limit the data to Jun 2023–Aug 2026. (Q1, Q2, Q3, Q4)
 * **cbsa_code**: Unique ID number for each metro area (Core-Based Statistical Area). Used to group rows by metro. (Q1, Q2, Q3, Q4)
@@ -121,8 +129,7 @@ All four use your **Jun 2023–Aug 2026** window.
 * **active_listing_count**: Number of homes for sale in the metro that month, not counting homes under contract (pending). (Q4)
 * **new_listing_count**: Number of homes newly listed for sale in the metro that month. (Q4)
 
-**Featured columns definitions:** (We will change the Featured Columns definitions to our own defintons later. The existing columns are Realtor's definitions)
----
+**Featured columns definitions:**
 
 *Q1 Featured Columns used:*
 * **avg_days_on_market**: Each metro's average `median_days_on_market` from Jun 2023 to Aug 2026. (Q1)
