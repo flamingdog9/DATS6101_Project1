@@ -5,3 +5,6 @@ Using listing prices across all metro areas from Realtor.com, which sources its 
 2. How much does the listing prices vary based on its listed metro area? How much does it vary over the average?
 3. Does the metro area relate to the number of price increases/reductions made by a realtor? Are there more increases in more densely populated areas?
 4. Does the total amount of listings in a metro area fluctuate during the year? Is there an increase during important times (Ex. start of school/summer)?
+
+## **Claude's suggestions and changes to the questions**
+
